@@ -13,7 +13,8 @@
 @define-color base_color white;
 @define-color bg_color shade (@base_color, 0.96);
 @define-color bg_highlight_color white;
-@define-color border_color alpha (@BLACK_900, 0.25);
+/*@define-color border_color alpha (@BLACK_900, 0.25);*/
+@define-color border_color alpha (@BLUEBERRY_300, 0.95);
 @define-color fg_color @BLACK_500;
 @define-color insensitive_color mix(@text_color, @bg_color, 0.5);
 @define-color inset_dark_color alpha (@BLACK_900, 0.06);
@@ -22,6 +23,7 @@
 @define-color menu_separator_shadow alpha (white, 0.8);
 @define-color placeholder_text_color shade(@text_color, 2.5);
 @define-color selected_bg_color shade (@BLUEBERRY_300, 0.85);
+@define-color outline_color shade (@BLUEBERRY_500, 0.95);
 @define-color selected_fg_color white;
 @define-color text_color @BLACK_500;
 @define-color text_shadow_color alpha (white, 0.4);
