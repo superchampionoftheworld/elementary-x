@@ -1,3 +1,8 @@
+This is intended to be a completely new theme, though with some design elements borrowed from Elementary X (screenshots coming soon). Elementary-X is what I am using as a base (because I don't know the ins and outs of GTK).
+
+
+Original README from Elementary X below:
+
 # Elementary X  
 
 #### Maintainer Needed! Please leave a comment in "Maintainer Needed!" issue if you're intrested  
