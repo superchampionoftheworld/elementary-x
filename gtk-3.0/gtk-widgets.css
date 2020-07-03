@@ -35,6 +35,8 @@
 }
 
 *:hover {
+    /*box-shadow: 0px 0px 2px 4px gray;*/
+    /*border*/
     -gtk-icon-effect: none;
 }
 
@@ -158,7 +160,7 @@ separator.horizontal {
 }
 
 menu separator {
-    margin: 4px 0;
+    margin: 2px 0;
 }
 
 separator.vertical {
@@ -169,13 +171,13 @@ separator.vertical {
 
 paned.vertical > separator {
     background-image:
-        linear-gradient(
+        /*linear-gradient(
             to bottom,
             @menu_separator 1px,
             @menu_separator_shadow 1px,
             @menu_separator_shadow 2px,
             transparent 2px
-        );
+        );*/
     margin-bottom: -7px;
     min-height: 8px;
 }
@@ -226,7 +228,7 @@ toolbar paned separator,
 entry,
 spinbutton,
 .entry {
-    background-image:
+    /*background-image:
         linear-gradient(
             to bottom,
             shade (
@@ -237,7 +239,7 @@ spinbutton,
                 @base_color,
                 0.97
             )
-        );
+        );*/
     border: 1px solid @border_color;
     border-radius: 2.5px;
     box-shadow:
@@ -398,7 +400,7 @@ entry image.left:dir(rtl):hover {
 
 entry.flat,
 .entry.flat {
-    border-width: 0 0 1px;
+    border-width: 0Z 0 1px;
     border-radius: 0;
     background-color: @base_color;
     background-image: none;
@@ -864,18 +866,24 @@ scale.vertical fill.bottom {
 
 frame,
 .frame {
-    border: 1px solid @border_color;
+    border: 1.5px solid @border_color;
+    padding: 5px;
+    border-radius: 5px;
     color: lighter (@fg_color);
 }
 
 scrolledwindow.frame {
     border: 1px solid @border_color;
+    border-radius: 5px;
 }
 
 frame.flat,
 scrolledwindow viewport.frame,
 .frame.flat {
-    border: none;
+    /*border: none;*/
+    border: 1.5px solid @border_color;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 /**********
@@ -886,14 +894,15 @@ button,
 .button,
 .button.menuitem.menubar {
     padding: 3px 6px;
+    box-shadow: 0px 0px 2px 3px gray;
 }
 
 button,
 .button,
 .titlebar .stack-switcher .button.image-button {
     text-shadow: 0 1px @text_shadow_color;
-    background-image:
-        linear-gradient(
+    /*background-image:*/
+        /*linear-gradient(
             to bottom,
             transparent,
             transparent 50%,
@@ -901,21 +910,24 @@ button,
                 #000,
                 0.04
             )
-        );
-    border: 1px solid @border_color;
-    border-radius: 2.5px;
-    box-shadow:
+        );*/
+    /*border: 2px solid @border_color;*/
+    border: 0.5px solid @border_color;
+    border-radius: 2px;
+    margin 10px;
+    /*box-shadow:
         inset 0 0 0 1px alpha (@bg_highlight_color, 0.05),
         inset 0 1px 0 0 alpha (@bg_highlight_color, 0.45),
         inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.15),
-        0 1px 0 0 alpha (@bg_highlight_color, 0.15);
+        0 1px 0 0 alpha (@bg_highlight_color, 0.15);*/
+        box-shadow: 0px 0px 3px 1px gray;
     color: @text_color;
     transition: all 100ms ease-in;
     -gtk-icon-shadow: 0 1px @text_shadow_color;
 }
 
 button label {
-    padding: 0 6px;
+    padding: 2px 6px;
 }
 
 .titlebar button,
@@ -923,11 +935,12 @@ button label {
     border-color: shade (@colorPrimary, 0.75);
     color: @textColorPrimary;
     text-shadow: 0 1px @textColorPrimaryShadow;
-    box-shadow:
-        inset 0 0 0 1px alpha (shade (@colorPrimary, 1.4), 0.05),
-        inset 0 1px 0 0 alpha (shade (@colorPrimary, 1.4), 0.45),
-        inset 0 -1px 0 0 alpha (shade (@colorPrimary, 1.4), 0.15),
-        0 1px 0 0 alpha (shade (@colorPrimary, 1.4), 0.3);
+    /*box-shadow:
+        inset 0 0 0 5px alpha (shade (black, 1.4), 0.05),
+        inset 0 5px 0 0 alpha (shade (@colorPrimary, 1.4), 0.45),
+        inset 0 -5px 0 0 alpha (shade (@colorPrimary, 1.4), 0.15),
+        0 1px 0 0 alpha (shade (@colorPrimary, 1.4), 0.3);*/
+    box-shadow: 0px 0px 10px 5px black;
     -gtk-icon-shadow: 0 1px @textColorPrimaryShadow;
 }
 
@@ -965,11 +978,12 @@ popover actionbar button:focus,
 .titlebar .stack-switcher .button.image-button:focus {
     color: @text_color;
     border-color: @colorAccent;
-    box-shadow:
+    /*box-shadow:
         inset 0 0 0 1px alpha (@bg_highlight_color, 0.05),
         inset 0 1px 0 0 alpha (@bg_highlight_color, 0.45),
         inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.15),
-        0 0 0 1px alpha (@colorAccent, 0.25);
+        0 0 0 1px alpha (@colorAccent, 0.25);*/
+    box-shadow: 0px 0px 3px 2px gray;
     transition: all 100ms ease-out;
 }
 
@@ -988,6 +1002,7 @@ button.flat:focus,
 button.flat:focus:hover,
 .button.flat:focus,
 .button.flat:focus:hover {
+    box-shadow: 0px 0px 2px 3px gray;
     background-color: alpha (@text_color, 0.15);
 }
 
@@ -1520,18 +1535,21 @@ notebook {
     background-clip: border-box;
     background-color: shade (@titlebar_color, 1.06);
     border: none;
-    border-radius: 0 0 2.5px 2.5px;
+    border-radius: 5px;
+    /*border-radius: 0 0 2.5px 2.5px;*/
     text-shadow: 0 1px @text_shadow_color;
     -gtk-icon-shadow: 0 1px @text_shadow_color;
 }
 
 notebook.frame {
-    border: 1px solid shade (@titlebar_color, 0.6);
+    border: 0px solid shade (@titlebar_color, 0.6);
+    box-shadow: 0px 0px 5px 4px shade (gray, 0.99) inset;
+    border-radius:5px;
 }
 
 notebook header {
     background-color: @bg_color;
-    background-image:
+    /*background-image:
         linear-gradient(
             to bottom,
             alpha (
@@ -1553,16 +1571,18 @@ notebook header {
                 @titlebar_color,
                 0.96
             )
-        );
+        );*/
     border-style: solid;
-    border-width: 0 0 1px;
+    border-width: 0 0px 0px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 0px gray;
     border-color: shade (@titlebar_color, 0.62);
-    border-radius: 0;
+    /*border-radius: 0;*/
 }
 
 notebook header:backdrop {
     background-color: shade (@titlebar_color, 1.02);
-    background-image:
+    /*background-image:
         linear-gradient(
             to bottom,
             alpha (
@@ -1573,20 +1593,26 @@ notebook header:backdrop {
                 #000,
                 0
             ) 3px
-        );
-    border-color: shade (@titlebar_color, 0.76);
+        );*/
+    /*border-color: shade (@titlebar_color, 0.76);*/
+    border-radius: 5px;
+    border-color: shade (@titlebar_color, 0);
 }
 
 notebook header button {
     min-width: 20px;
+    border-radius: 5px;
+    border: 2px;
 }
 
 .header separator.vertical {
-    border-right-color: alpha (#fff, 0.2);
+    /*border-right-color: alpha (#fff, 0.2);*/
+    border-right-color: alpha (#fff, 0);
 }
 
 notebook image {
-    color: shade (@title_color, 0.75);
+    color: shade (@title_color, 0.1);
+    border: 10px;
 }
 
 notebook image:disabled {
@@ -1596,7 +1622,7 @@ notebook image:disabled {
 notebook tab {
     background-image: none;
     background-color: transparent;
-    border-image:
+    /*border-image:
         linear-gradient(
             to bottom,
             transparent,
@@ -1604,18 +1630,18 @@ notebook tab {
                 #000,
                 0.2
             )
-        ) 0 1 0 0;
-    border-radius: 0;
+        ) 0 1 0 0;*/
+    border-radius: 5px;
     border-style: solid;
-    border-width: 0 1px;
+    border-width: 2px shade (@titlebar_color, 1.02);
     color: shade (@text_color, 1.12);
     margin-right: -1px;
     padding: 3px;
 }
 
 notebook tab:first-child {
-    border-width: 0 1px;
-    border-image:
+    border-width: 0 0px;
+   /* border-image:
         linear-gradient(
             to bottom,
             transparent,
@@ -1623,11 +1649,11 @@ notebook tab:first-child {
                 #000,
                 0.2
             )
-        ) 0 1 0 1;
+        ) 0 1 0 1;*/
 }
 
 notebook tab:checked {
-    background-image:
+   /*background-image:
         linear-gradient(
             to bottom,
             shade (
@@ -1638,21 +1664,28 @@ notebook tab:checked {
                 @titlebar_color,
                 0.9
             )
-        );
-    border-color: shade (@titlebar_color, 0.62);
-    border-image: none;
-    border-radius: 4px 4px 0 0;
+        );*/    
+    /*border-color: shade (@titlebar_color, 0.62);*/
+    
+    /*border-image: none;*/
+    /*border-radius: 4px 4px 0 0;*/
+    border: 2px;
+    
     border-style: solid;
-    box-shadow:
+    border-color:  @border_color;
+    /*border-bottom: 2px;*/
+    box-shadow: 0px 0px 0px 0px gray;
+    color: red;
+    /*box-shadow:
         inset 0 0 0 1px alpha (@bg_highlight_color, 0.2),
-        0 0 1px 1px alpha (#000, 0.1);
+        0 0 1px 1px alpha (#000, 0.1);*/
     text-shadow: 0 1px @text_shadow_color;
     color: @text_color;
     -gtk-icon-shadow: 0 1px @text_shadow_color;
 }
 
 notebook tab:checked:backdrop {
-    background-image:
+   /* background-image:
         linear-gradient(
             to bottom,
             shade (
@@ -1663,11 +1696,11 @@ notebook tab:checked:backdrop {
                 @titlebar_color,
                 1.02
             )
-        );
-    border-color: shade (@titlebar_color, 0.76);
-    box-shadow:
+        );*/
+    border-color: shade (@titlebar_color, 0) inset ;
+    /*box-shadow:
         inset 0 0 0 1px alpha (@bg_highlight_color, 0.2),
-        0 0 0 1px alpha (#000, 0.1);
+        0 0 0 1px alpha (#000, 0.1);*/
 }
 
 notebook tab > image {
@@ -1676,29 +1709,33 @@ notebook tab > image {
 
 notebook viewport {
     background-color: @base_color;
-    border-width: 0;
+    border-width: 1px;
 }
 
 notebook tab button {
     padding: 0;
+    box-shadow: 0px 0px 2px 3px gray;
+    border: 0px;
 }
 
 notebook tab > entry {
-    border-radius: 2px;
+    border-radius: 20px;
     padding: 1px 5px;
 }
 
 /* Label Trickery */
 
 notebook tab label {
-    color: alpha(@text_color, 0.75);
+    /*color: alpha(@text_color, 0.75);*/
+    color: black;
     padding: 3px 6px;
 }
 
 notebook tab:active label,
 notebook .active-page,
 notebook tab .active-page label {
-    color: @text_color;
+    /*color: @text_color;*/
+    color: black;
 }
 
 notebook tab:backdrop label,
@@ -1708,7 +1745,7 @@ notebook tab label:backdrop {
 
 .inline-toolbar notebook header {
     background-color: shade (@tab_base_color, 0.95);
-    background-image:
+    /*background-image:
         linear-gradient(
             to bottom,
             alpha (
@@ -1727,7 +1764,8 @@ notebook tab label:backdrop {
                 #000,
                 0.05
             )
-        );
+        );*/
+        border-radius: 10px;
     border-color: shade (@tab_base_color, 0.78);
 }
  .inline-toolbar notebook tab:checked {
@@ -1742,7 +1780,7 @@ notebook tab label:backdrop {
 
 .inline-toolbar notebook header {
     background-color: shade (@tab_base_color, 0.95);
-    background-image:
+    /*background-image:
         linear-gradient(
             to bottom,
             alpha (
@@ -1761,7 +1799,7 @@ notebook tab label:backdrop {
                 #000,
                 0.05
             )
-        );
+        );*/
     border-color: shade (@tab_base_color, 0.78);
 }
  .inline-toolbar notebook tab:checked {
@@ -1826,7 +1864,7 @@ scrollbar slider {
 }
 
 scrollbar.overlay-indicator slider:hover {
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 scrollbar trough {
@@ -1869,11 +1907,13 @@ window.menu,
 window.popup {
     padding: 4px 0;
     border-radius: 3px;
+    /*border: 1px solid shade (@BLUEBERRY_300, 0.8);*/
+    border: 1px solid @border_color;
     background-color: @bg_color;
-    box-shadow:
+    /*box-shadow:
         inset 0 0 0 1px alpha (@bg_highlight_color, 0.1),
         inset 0 1px 0 0 alpha (@bg_highlight_color, 0.9),
-        inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.3);
+        inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.3);*/
 }
 
 .menu.button {
@@ -1883,12 +1923,15 @@ window.popup {
 menubar,
 .menubar {
     color: @text_color;
-    background-color: shade (@titlebar_color, 0.94);
-    border: 1px solid shade (@titlebar_color, 0.68);
+    background-color: shade (white, 0.94);
+    /*border: 1px solid shade (@BLUEBERRY_300, 0.8);*/
+    border: 1px solid @border_color;
+    box-shadow: 0px 0px 2px 3px gray;
+    border-radius: 5px;
     border-width: 0 0 1px;
-    box-shadow:
+    /*box-shadow:
         inset 0 1px 0 0 alpha (@bg_highlight_color, 0.2),
-        inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.2);
+        inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.2);*/
     -GtkWidget-window-dragging: true;
 }
 
@@ -1915,7 +1958,7 @@ modelbutton:focus,
 .menuitem:focus {
     background: transparent;
     border: none;
-    border-radius: 0;
+    border-radius: 5px;
     box-shadow: none;
     text-shadow: none;
     -gtk-icon-shadow: none;
@@ -2004,7 +2047,7 @@ switch {
 
 check,
 radio {
-    background-image:
+    /*background-image:
         linear-gradient(
             to bottom,
             shade (
@@ -2015,7 +2058,7 @@ radio {
                 @base_color,
                 0.97
             )
-        );
+        );*/
     border: 1px solid @border_color;
     box-shadow:
         inset 0 1px 0 0 alpha (@bg_highlight_color, 0.5),
@@ -2251,12 +2294,17 @@ toolbar,
 .toolbar {
     -GtkWidget-window-dragging: true;
     padding: 3px;
-    border: 1px solid shade (@titlebar_color, 0.62);
-    border-width: 0 0 1px;
-    box-shadow:
+    /*border: 1px solid shade (@titlebar_color, 0.62);*/
+    border-width: 10px 10px 10px;
+    /*border-color: @BLUEBERRY_300;*/
+    border-color: @border_color;
+    /*box-shadow:
         inset 0 1px 0 0 alpha (@bg_highlight_color, 0.2),
-        inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.2);
-    background-image:
+        inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.2);*/
+    /*box-shadow: 0px 0px 2px 3px gray;*/
+    border-radius: 5px;
+    color: @bg_color;
+    /*background-image:
         linear-gradient(
             to bottom,
             shade (
@@ -2267,7 +2315,7 @@ toolbar,
                 @titlebar_color,
                 0.9
             )
-        );
+        );*/
     text-shadow: 0 1px alpha (@bg_highlight_color, 0.4);
     -gtk-icon-shadow: 0 1px alpha (@bg_highlight_color, 0.4);
 }
@@ -2307,7 +2355,7 @@ toolbar.secondary-toolbar,
     border-width: 0 0 1px;
     border-style: solid;
     padding: 2px;
-    background-image:
+    /*background-image:
         linear-gradient(
             to bottom,
             shade (
@@ -2318,10 +2366,10 @@ toolbar.secondary-toolbar,
                 @titlebar_color,
                 0.9
             )
-        );
-    box-shadow:
+        );*/
+   /* box-shadow:
         inset 0 1px 0 0 alpha (@bg_highlight_color, 0.3),
-        inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.2);
+        inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.2);*/
     border-color: shade (@titlebar_color, 0.6);
     text-shadow: 0 1px alpha (@bg_highlight_color, 0.4);
     -gtk-icon-shadow: 0 1px alpha (@bg_highlight_color, 0.4);
@@ -3033,11 +3081,15 @@ flowboxchild:focus {
 
 treeview header button,
 column-header .button {
-    border-left-width: 0;
+    border-left-width: 0px;
     border-top-width: 0;
-    border-radius: 0;
+    border-radius: 5px;
+    border: 2px;
+    border-color: @border_color;
     background-color: @bg_color;
-    background-image:
+    margin: 2px;
+    /*background-color: @bg_color;
+    /*background-image:
         linear-gradient(
             to bottom,
             shade (
@@ -3045,14 +3097,14 @@ column-header .button {
                 0.88
             ),
             @base_color
-        );
+        );*/
     font-weight: bold;
-    padding: 4px 2px;
+    padding: 4px 4px;
 }
 
 treeview header button:last-child,
 column-header:last-child .button {
-    border-right-width: 0;
+    border-right-width: 0px;
 }
 
 treeview header button:hover,
@@ -3061,10 +3113,10 @@ column-header .button:hover {
         linear-gradient(
             to bottom,
             shade (
-                @base_color,
+                @bg_color,
                 0.8
             ),
-            @base_color
+            @bg_color
         );
 }
 
@@ -3951,10 +4003,10 @@ messagedialog decoration {
 dialog,
 messagedialog {
     border-radius: 0 0 4px 4px;
-    box-shadow:
+    /*box-shadow:
         inset 1px 0 0 0 alpha (@bg_highlight_color, 0.2),
         inset -1px 0 0 0 alpha (@bg_highlight_color, 0.2),
-        inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.3);
+        inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.3);*/
 }
 
 messagedialog,
