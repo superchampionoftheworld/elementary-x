@@ -1,5 +1,6 @@
 This is intended to be a completely new theme, though with some design elements borrowed from Elementary X (screenshots coming soon). Elementary-X is what I am using as a base (because I don't know the ins and outs of GTK).
 
+Requires a window manager/compositor with blurring abilities (eg. Compton or Compiz). This is because this theme uses transparency for tooltips, right-click menu, popovers, and more. 
 
 Original README from Elementary X below:
 
